@@ -150,6 +150,8 @@ Creating a DDP will simply ask for the name of the new data pack. As it says, do
 
 For disks, the SmartKeys will select the following:
 
+![Create Disk Size](./readme-images/create-disk-size.png)
+
 | Key | Description
 |---  |---
 | II  | 160K Single Sided/Double Density disk, 40 tracks.
@@ -159,6 +161,8 @@ For disks, the SmartKeys will select the following:
 | VI  | Custom (specify # of blocks)
 
 If custom is selected, a status message asking for the # of desired blocks. You can specify  any number from 1 to 16383. Each block is 1024 bytes, allowing for a maximum image size of 16 megabytes (16,776,192 bytes). If RETURN is presed, the image is created along with an affirmative message. If ESCAPE is pressed, the operation is aborted.
+
+![Create Custom Disk Size](./readme-images/create-custom.png)
 
 ## Formatting a file
 
