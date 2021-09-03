@@ -517,8 +517,8 @@ void select_create(void)
   if (t==10)
     {
       select_sound_chime();
-      smartkeys_display(NULL,"   160K","   320K","   640K","   1440K"," CUSTOM\n(# BLOCKS)");
-      smartkeys_status("  SIZE?");
+      smartkeys_display(NULL,"  160K","  320K","  640K"," 1440K"," CUSTOM\n(# BLOCKS)");
+      smartkeys_status("  DISK\n  SIZE?");
 
       key=eos_read_keyboard();
 
