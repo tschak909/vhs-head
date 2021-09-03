@@ -76,6 +76,8 @@ If a ROM file is selected, it will be converted by the ADE into a bootable forma
 
 Pressing one of the III, IV, V, or VI keys, will mount the currently selected image into the desired virtual drive on the ADE.
 
+![SmartKeys to mount images](./readme-images/mount-specific-image.png)
+
 | Key | Description
 |---  |---
 | III | Mount into Drive 1 (EOS Device 4)
