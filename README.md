@@ -72,6 +72,12 @@ If a disk or tape is selected, the selected disk or tape is mounted in drive 1 (
 
 If a ROM file is selected, it will be converted by the ADE into a bootable format, and the system booted. If the ROM is larger than 32K (32,768 bytes), then only the first 32K (32,768 bytes) are loaded.
 
+## Aborting An Operation
+
+For any of the below operations, pressing any other key than what is visible (for example, ESCAPE), will abort the current operation.
+
+![Operation Aborted](./readme-images/operation-aborted.png)
+
 ## Mounting an image into a specific drive
 
 Pressing one of the III, IV, V, or VI keys, will mount the currently selected image into the desired virtual drive on the ADE.
@@ -101,7 +107,9 @@ Pressing the CLEAR key, will present the following SmartKeys, to ask which drive
 | V   | Clear Drive 3
 | VI  | Clear Drive 4
 
-A confirmation message will be shown if one of these keys are pressed. Pressing any other key will abort the operation.
+An affirmation message will be shown if one of these keys are pressed. Pressing any other key will abort the operation.
+
+![All Slots Cleared](./readme-images/all-slots-cleared.png)
 
 ## Creating a New file
 
