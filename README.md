@@ -94,6 +94,12 @@ Pressing one of the III, IV, V, or VI keys, will mount the currently selected im
 
 A confirmation status message will be shown, and subsequently return to the main part of the program.
 
+## Querying for an image in a given slot
+
+By pressing SHIFT, and one of the above smartkeys, you can query for the file in a drive. For example, SHIFT-III will display what is mounted in Drive 1:
+
+![What is in Drive 1](./readme-images/what-is-in-drive-1.png)
+
 ## Clearing a Drive slot
 
 Pressing the CLEAR key, will present the following SmartKeys, to ask which drive slot(s) to clear:
