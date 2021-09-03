@@ -180,9 +180,13 @@ If the operation is confirmed, then the file is formatted, and an affirmative me
 
 Pressing DELETE will delete the currently selected file from the SD card, after affirmative confirmation.
 
+![Delete Are you sure?](./readme-images/delete-are-you-sure.png)
+
 Press V to confirm the operation, VI or any other key to abort.
 
 If the operation is confirmed, the file is deleted, an affirmative message is displayed, and the directory is re-loaded, starting from the first page.
+
+![File Deleted](./readme-images/delete-deleted.png)
 
 ## Renaming a file
 
