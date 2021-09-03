@@ -46,6 +46,14 @@ VHS Head is controlled with the various SmartKeys present on the keyboard, as se
 
 When VHS Head starts, it will read the current directory, and display the first 17 entries on screen. If the ADE has been reset, the root directory will be displayed, otherwise, the last directory viewed will be shown.
 
+**note** Joystick movements and button presses from either controller are accepted.
+
+A cursor bar shows the currently selected file. It can be moved using either the arrow keys, or the joystick. If the cursor moves beyond the last visible entry, and there are more entries to display, then the next page will be displayed, and the cursor bar will be placed at the top of the display. If the cursor is at the first visible entry, and an attempt is made to move further up, and there is a previous page, the previous page will be displayed.
+
+### Quickly navigating between pages
+
+Pressing CONTROL while using either the arrow keys, or pressing the right button while moving the joystick will either devance the page, if pressed UP, or advance the page, if pressed down.
+
 ## Icons
 
 Each file shows a corresponding icon, indicating its file type:
@@ -55,15 +63,6 @@ Each file shows a corresponding icon, indicating its file type:
 | ![DDP Icon](./readme-images/icon-DDP.png)  | DDP Digital Data Pack
 | ![DSK Icon](./readme-images/icon-DISK.png) | Disk Image File
 | ![ROM Icon](./readme-images/icon-ROM.png)  | ROM Cartridge File
-
-
-**note** Joystick movements and button presses from either controller are accepted.
-
-A cursor bar shows the currently selected file. It can be moved using either the arrow keys, or the joystick. If the cursor moves beyond the last visible entry, and there are more entries to display, then the next page will be displayed, and the cursor bar will be placed at the top of the display. If the cursor is at the first visible entry, and an attempt is made to move further up, and there is a previous page, the previous page will be displayed.
-
-### Quickly navigating between pages
-
-Pressing CONTROL while using either the arrow keys, or pressing the right button while moving the joystick will either devance the page, if pressed UP, or advance the page, if pressed down.
 
 ## The RETURN key
 
