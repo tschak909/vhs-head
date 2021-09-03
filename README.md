@@ -198,9 +198,17 @@ If the operation is confirmed, the file is deleted, an affirmative message is di
 
 Pressing the WILD CARD key will rename the currently selected file. VHS Head will ask you for the new file name. Pressing ESCAPE will abort the operation, while pressing RETURN will rename the file, display an affirmative message, and refresh the directory display back to the first page.
 
+![Rename ask for Filename](./readme-images/rename-filename.png)
+
+![Rename Renaming File](./readme-images/rename-renaming.png)
+
+![Rename File Renamed](./readme-images/rename-renamed.png)
+
 ## Printing The Directory
 
 Pressing the PRINT key will display a status message indicating that the directory is being printed; then send a list of the current directory to the SmartWriter printer, displaying each entry in the input/output section of the screen as it is printed. Once done, the input/output area of the screen will clear, and the SmartKeys display will return. 
+
+![Printing File List](./readme-images/printing.png)
 
 Pressing VI will abort the operation.
 
@@ -214,11 +222,17 @@ The Cut, Copy and Paste commands are mapped to the following SmartKeys:
 | COPY  | Copy
 | STORE | Paste
 
-MOVE will put the selected file onto the clipboard. You can then navigate to another folder and press STORE to move the file to the current folder. The original file is erased. An affirmative message will be displayed, and an affirmative tone will be played. 
+MOVE will put the selected file onto the clipboard. You can then navigate to another folder and press STORE to move the file to the current folder. The original file is erased. An affirmative message will be displayed, and an affirmative tone will be played.
+
+![Cut](./readme-images/clipboard-cut.png)
 
 COPY will put the selected file onto the clipboard. You can then navigate to another folder and press STORE to make a copy of the file to the current folder. The original file is preserved. An affirmative message will be displayed, and an affirmative tone will be played.
 
+![Copy](./readme-images/clipboard-move.png)
+
 STORE will complete the MOVE or COPY. If a file hasn't been previously selected, then a negative tone and message will be heard and displayed, indicating that a MOVE or COPY should be done first.
+
+![Paste](./readme-images/clipboard-paste.png)
 
 ## Why is this called "VHS Head" ?
 
