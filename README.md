@@ -168,9 +168,13 @@ If custom is selected, a status message asking for the # of desired blocks. You 
 
 Formatting a file will clear it of all data. It will still need to be mounted and formatted by the appropriate operating system (EOS or CP/M / T-DOS) before use, as this only clears the image, and does not apply a file system.
 
+![Format Are you Sure?](./readme-images/format-are-you-sure.png)
+
 Press V to confirm the operation, VI or any other key to abort.
 
 If the operation is confirmed, then the file is formatted, and an affirmative message is displayed.
+
+![File Formatted](./readme-images/format-formattede.png)
 
 ## Deleting a file
 
