@@ -52,9 +52,9 @@ Each file shows a corresponding icon, indicating its file type:
 
 | Icon                                      | Description
 |---                                        |---
-| ![DDP Icon](./readme-image/icon-DDP.png)  | DDP Digital Data Pack
-| ![DSK Icon](./readme-image/icon-DISK.png) | Disk Image File
-| ![ROM Icon](./readme-image/icon-ROM.png)  | ROM Cartridge File
+| ![DDP Icon](./readme-images/icon-DDP.png)  | DDP Digital Data Pack
+| ![DSK Icon](./readme-images/icon-DISK.png) | Disk Image File
+| ![ROM Icon](./readme-images/icon-ROM.png)  | ROM Cartridge File
 
 
 **note** Joystick movements and button presses from either controller are accepted.
