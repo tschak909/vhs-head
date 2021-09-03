@@ -431,7 +431,7 @@ void select_print(void)
   unsigned char *p;
 
   select_sound_confirm();
-  smartkeys_display(NULL,NULL,NULL,NULL,NULL,NULL);
+  smartkeys_display(NULL,NULL,NULL,NULL,NULL," ABORT");
   smartkeys_status("  PRINTING FILE LIST...");
 
   for (unsigned char i=0;i<19;i++)
