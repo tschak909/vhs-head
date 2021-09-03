@@ -116,6 +116,8 @@ An affirmation message will be shown if one of these keys are pressed. Pressing 
 
 Pressing the INSERT key will immediately ask for a file type, showing one of three possible types:
 
+![Create Ask Type](./readme-images/create-select-type.png)
+
 | Key | Description
 |---  |---
 | IV  | DIR - Create a Directory (folder) that can hold other files.
@@ -123,6 +125,18 @@ Pressing the INSERT key will immediately ask for a file type, showing one of thr
 | VI  | DDP - Create a Digital Data Pack (256K)
 
 Any other key will abort the operation.
+
+For all types, it will ask you for a name (sans extension):
+
+![Create Enter Filename](./readme-images/create-enter-filename.png)
+
+This is followed by a message indicating that the file is being created:
+
+![Creating Image](./readme-images/create-creating-image.png)
+
+And after the file is created, a message indicating that the file has been created.
+
+![Created](./readme-images/create-image-created.png)
 
 ### DIR
 
