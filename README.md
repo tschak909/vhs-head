@@ -174,7 +174,7 @@ Press V to confirm the operation, VI or any other key to abort.
 
 If the operation is confirmed, then the file is formatted, and an affirmative message is displayed.
 
-![File Formatted](./readme-images/format-formattede.png)
+![File Formatted](./readme-images/format-formatted.png)
 
 ## Deleting a file
 
