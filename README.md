@@ -91,6 +91,8 @@ A confirmation status message will be shown, and subsequently return to the main
 
 Pressing the CLEAR key, will present the following SmartKeys, to ask which drive slot(s) to clear:
 
+![Clear Which?](./readme-images/clear-which.png)
+
 | Key | Description
 |---  |---
 | II  | Clear ALL four drive slots.
