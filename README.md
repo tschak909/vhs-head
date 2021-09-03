@@ -228,7 +228,7 @@ MOVE will put the selected file onto the clipboard. You can then navigate to ano
 
 COPY will put the selected file onto the clipboard. You can then navigate to another folder and press STORE to make a copy of the file to the current folder. The original file is preserved. An affirmative message will be displayed, and an affirmative tone will be played.
 
-![Copy](./readme-images/clipboard-move.png)
+![Copy](./readme-images/clipboard-copy.png)
 
 STORE will complete the MOVE or COPY. If a file hasn't been previously selected, then a negative tone and message will be heard and displayed, indicating that a MOVE or COPY should be done first.
 
