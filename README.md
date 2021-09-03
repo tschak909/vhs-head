@@ -58,8 +58,9 @@ Pressing CONTROL while using either the arrow keys, or pressing the right button
 
 Each file shows a corresponding icon, indicating its file type:
 
-| Icon                                      | Description
-|---                                        |---
+| Icon                                       | Description
+|---                                         |---
+| ![DIR Icon](./readme-images/icon-DIR.png)  | Directory (folder) 
 | ![DDP Icon](./readme-images/icon-DDP.png)  | DDP Digital Data Pack
 | ![DSK Icon](./readme-images/icon-DISK.png) | Disk Image File
 | ![ROM Icon](./readme-images/icon-ROM.png)  | ROM Cartridge File
