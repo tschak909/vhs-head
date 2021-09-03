@@ -46,6 +46,17 @@ VHS Head is controlled with the various SmartKeys present on the keyboard, as se
 
 When VHS Head starts, it will read the current directory, and display the first 17 entries on screen. If the ADE has been reset, the root directory will be displayed, otherwise, the last directory viewed will be shown.
 
+## Icons
+
+Each file shows a corresponding icon, indicating its file type:
+
+| Icon                                      | Description
+|---                                        |---
+| ![DDP Icon](./readme-image/icon-DDP.png)  | DDP Digital Data Pack
+| ![DSK Icon](./readme-image/icon-DISK.png) | Disk Image File
+| ![ROM Icon](./readme-image/icon-ROM.png)  | ROM Cartridge File
+
+
 **note** Joystick movements and button presses from either controller are accepted.
 
 A cursor bar shows the currently selected file. It can be moved using either the arrow keys, or the joystick. If the cursor moves beyond the last visible entry, and there are more entries to display, then the next page will be displayed, and the cursor bar will be placed at the top of the display. If the cursor is at the first visible entry, and an attempt is made to move further up, and there is a previous page, the previous page will be displayed.
