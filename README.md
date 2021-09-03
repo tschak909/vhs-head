@@ -10,6 +10,8 @@ To install, simply download the latest boot.dsk from the Releases, and place it 
 
 ## The Screen
 
+![Main Screen with three areas](./readme-images/main-screen.jpg)
+
 VHS Head divides the screen into three main areas:
 
 * The directory view, with the current directory on the top most line, and 17 entries of the directory at a time.
