@@ -487,6 +487,31 @@ void select_delete(void)
     }
 }
 
+void select_format(void)
+{
+  select_sound_chime();
+  smartkeys_display(NULL,NULL,NULL,NULL,"  YES","   NO");
+  smartkeys_status("  FORMAT FILE\n  ARE YOU SURE?");
+
+  key=eos_read_keyboard();
+
+  switch (key)
+    {
+    case 'Y':
+    case 'y':
+    case 0x85:
+      /* ade_io_delete(fileno); */
+      select_status("  FILE FORMATTED.");
+      select_clear_bottom();
+      dir_loaded=false;
+      repaginate=true;
+      break;
+    default:
+      select_operation_aborted();
+      break;
+    }
+}
+
 void select_create(void)
 {
   unsigned char t=0;
@@ -712,6 +737,9 @@ void select(void)
 	  break;
 	case 0x9B: // STORE
 	  select_paste();
+	  break;
+	case 0x9C:
+	  select_format();
 	  break;
 	case 0xA0: // UP
 	  select_up();
