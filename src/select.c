@@ -50,27 +50,27 @@ static unsigned char visible_entries=0;
 
 static void select_sound_chime(void)
 {
-  smartkeys_sound_play(6);
+  smartkeys_sound_play(SOUND_POSITIVE_CHIME);
 }
 
 static void select_sound_buzz(void)
 {
-  smartkeys_sound_play(8);
+  smartkeys_sound_play(SOUND_NEGATIVE_BUZZ);
 }
 
 static void select_sound_keypress(void)
 {
-  smartkeys_sound_play(7);
+  smartkeys_sound_play(SOUND_KEY_PRESS);
 }
 
 static void select_sound_mode_change(void)
 {
-  smartkeys_sound_play(9);
+  smartkeys_sound_play(SOUND_MODE_CHANGE);
 }
 
 static void select_sound_confirm(void)
 {
-  smartkeys_sound_play(2);
+  smartkeys_sound_play(SOUND_CONFIRM);
 }
 
 static void select_clear_bottom(void)
@@ -171,6 +171,11 @@ static char select_icon(char p)
     default:
       return 0x20;
     }
+}
+
+static unsigned char select_file_type(void)
+{
+  return &blocks[(page*1024)+(offset*DISPLAY_LENGTH)];
 }
 
 static void select_display_block(void)
@@ -345,7 +350,6 @@ static void select_status(const char *c)
   smartkeys_display(NULL,NULL,NULL,NULL,NULL,NULL);
   smartkeys_status(c);
   sleep(2);
-  select_smartkeys();
 }
 
 static void select_mount(unsigned char dev)
@@ -419,9 +423,6 @@ static void select_clear_slot(void)
       select_operation_aborted();
       break;
     }
-
-  sleep(1);
-  select_smartkeys();
 }
 
 void select_print(void)
@@ -643,6 +644,12 @@ void select_paste(void)
     }
 }
 
+void select_cant_mount_folders(void)
+{
+  select_sound_buzz();
+  select_status("CAN'T MOUNT FOLDERS TO DRIVES. IGNORING.");
+}
+
 void select(void)
 {
 
@@ -658,12 +665,12 @@ void select(void)
 
   select_display_block();
   select_update_selection();
-  select_smartkeys();
   
   eos_start_read_keyboard();
     
   while (1)
     {
+      select_smartkeys();
       select_input();
       fileno=((page*DISPLAY_ROWS)+offset)+1;
       
@@ -685,18 +692,36 @@ void select(void)
 	    {
 	      select_mount(4);
 	      select_status("  MOUNTED TO D1:");
+	    }
+	  else
+	    select_cant_mount_folders();
 	  break;
 	case 0x84: // IV
-	  select_mount(5);
-	  select_status("  MOUNTED TO D2:");
+	  if (select_file_type() > 9)
+	    {
+	      select_mount(5);
+	      select_status("  MOUNTED TO D2:");
+	    }
+	  else
+	    select_cant_mount_folders();
 	  break;
 	case 0x85: // V
-	  select_mount(6);
-	  select_status("  MOUNTED TO D3:");
+	  if (select_file_type() > 9)
+	    {
+	      select_mount(6);
+	      select_status("  MOUNTED TO D3:");
+	    }
+	  else
+	    select_cant_mount_folders();
 	  break;
 	case 0x86: // VI
-	  select_mount(7);
-	  select_status("  MOUNTED TO D4:");
+	  if (select_file_type() > 9)
+	    {
+	      select_mount(7);
+	      select_status("  MOUNTED TO D4:");
+	    }
+	  else
+	    select_cant_mount_folders();
 	  break;
 	case 0x8B: // SHIFT-III
 	  select_display_mount(4);
@@ -765,6 +790,10 @@ void select(void)
 
       if (repaginate==true)
 	break; // fall through to main()
+
+      eos_end_read_keyboard();
+      eos_start_read_keyboard();
+      key=0;
     }
   
 }
