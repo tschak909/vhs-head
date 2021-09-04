@@ -176,11 +176,6 @@ static char select_icon(char p)
 static void select_display_block(void)
 {
   unsigned char *p;
-
-  if (key==0xA2) // DOWN
-    offset=visible_entries;
-  else
-    offset=0;
   
   visible_entries=0;
   
@@ -196,6 +191,9 @@ static void select_display_block(void)
 	  visible_entries++;
 	}
     }
+
+  if (visible_entries == 0)
+    key = 0xA2; // go back.
 }
 
 static void select_display_path(void)
@@ -206,15 +204,12 @@ static void select_display_path(void)
 
 static void select_update_selection(void)
 {
-  // Paint file list 
-  msx_vfill(ADDR_FILE_LIST,ATTR_FILE_LIST,4352);
-
+  // Paint file list
+  for (int i=0;i<17;i++)
+    msx_vfill(ADDR_FILE_LIST + (i << 8) + 16, ATTR_FILE_LIST, 240);
+  
   // Paint selection
-  msx_vfill(ADDR_FILE_LIST+(offset<<8),0x13,256);
-
-  // Paint type column
-  msx_vfill_v(ADDR_FILE_TYPE,ATTR_FILE_TYPE,136);
-  msx_vfill_v(ADDR_FILE_TYPE+8,ATTR_FILE_TYPE,136);  
+  msx_vfill(ADDR_FILE_LIST+(offset<<8) + 16,0x13,240);
 }
 
 static void select_page_up(void)
@@ -235,8 +230,10 @@ static void select_page_down(void)
 
 static void select_up(void)
 {
-  if (offset==0)
+  if (offset==0 && page > 0)
     {
+      if (offset == 0)
+	offset = 16;
       select_page_up();
       repaginate=true;
     }
@@ -251,6 +248,7 @@ static void select_down(void)
 {
   if (offset==16)
     {
+      offset=0;
       select_page_down();
       repaginate=true;
     }
@@ -258,7 +256,7 @@ static void select_down(void)
     {
       offset++;
 
-      if (offset > visible_entries)
+      if (offset == visible_entries)
 	offset--;
       
       select_update_selection();
@@ -683,8 +681,10 @@ void select(void)
 	  repaginate=true;
 	  break;
 	case 0x83: // III
-	  select_mount(4);
-	  select_status("  MOUNTED TO D1:");
+	  if (select_file_type() > 9)
+	    {
+	      select_mount(4);
+	      select_status("  MOUNTED TO D1:");
 	  break;
 	case 0x84: // IV
 	  select_mount(5);
@@ -748,10 +748,12 @@ void select(void)
 	  select_down();
 	  break;
 	case 0xA4: // CTRL-UP
+	  offset=0;
 	  select_page_up();
 	  repaginate=true;
 	  break;
 	case 0xA6: // CTRL-DOWN
+	  offset=0;
 	  select_page_down();
 	  repaginate=true;
 	  break;
