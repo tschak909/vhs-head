@@ -801,9 +801,6 @@ void select(void)
       if (repaginate==true)
 	break; // fall through to main()
 
-      eos_end_read_keyboard();
-      eos_start_read_keyboard();
-      key=0;
     }
   
 }
