@@ -665,12 +665,11 @@ void select(void)
 
   select_display_block();
   select_update_selection();
-  
+  select_smartkeys();  
   eos_start_read_keyboard();
     
   while (1)
     {
-      select_smartkeys();
       select_input();
       fileno=((page*DISPLAY_ROWS)+offset)+1;
       
@@ -695,6 +694,7 @@ void select(void)
 	    }
 	  else
 	    select_cant_mount_folders();
+	  select_smartkeys();
 	  break;
 	case 0x84: // IV
 	  if (select_file_type() > 9)
@@ -704,6 +704,7 @@ void select(void)
 	    }
 	  else
 	    select_cant_mount_folders();
+	  select_smartkeys();
 	  break;
 	case 0x85: // V
 	  if (select_file_type() > 9)
@@ -713,6 +714,7 @@ void select(void)
 	    }
 	  else
 	    select_cant_mount_folders();
+	  select_smartkeys();
 	  break;
 	case 0x86: // VI
 	  if (select_file_type() > 9)
@@ -722,6 +724,7 @@ void select(void)
 	    }
 	  else
 	    select_cant_mount_folders();
+	  select_smartkeys();
 	  break;
 	case 0x8B: // SHIFT-III
 	  select_display_mount(4);
@@ -744,27 +747,34 @@ void select(void)
 	case 0x94: // INSERT
 	  select_create();
 	  select_clear_bottom();
+	  select_smartkeys();
 	  break;
 	case 0x95: // PRINT
 	  select_print();
 	  select_clear_bottom();
+	  select_smartkeys();
 	  break;
 	case 0x97: // DELETE
 	  select_delete();
 	  select_clear_bottom();
+	  select_smartkeys();
 	  break;
 	case 0x96: // CLEAR
 	  select_clear_slot();
 	  select_clear_bottom();
+	  select_smartkeys();
 	  break;
 	case 0x9A: // MOVE
 	  select_cut();
+	  select_smartkeys();
 	  break;
 	case 0x9B: // STORE
 	  select_paste();
+	  select_smartkeys();
 	  break;
 	case 0x9C:
 	  select_format();
+	  select_smartkeys();
 	  break;
 	case 0xA0: // UP
 	  select_up();
